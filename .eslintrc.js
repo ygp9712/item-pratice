@@ -28,7 +28,8 @@ module.exports = {
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       js: 'never',
-      vue: 'never'
+      vue: 'never',
+      "linebreak-style": ["error", process.env.NODE_ENV === 'prod' ? "unix" : "windows"]
     }],
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions

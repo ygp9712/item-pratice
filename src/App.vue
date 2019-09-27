@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
+    <!-- routerview显示当前路由地址所对应的内容 -->
   </div>
 </template>
 
@@ -20,4 +20,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-</style>
+</style> 
