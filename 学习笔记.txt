@@ -2,3 +2,5 @@
 2、 通过使用styl中设置变量来保存背景颜色
 3、 在<style>中需要在import中加@，即@import
 4、 在webpack.base.conf.js中的resolve里改文件路径别名（修改完webpack文件后要重启服务器）
+5、使用npm安装时在模块名后面加"@版本号"选择版本
+6、设置scoped的样式表中可以通过.class1 >>> .class2 的方法使两个不同区域的样式互通
