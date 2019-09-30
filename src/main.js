@@ -2,17 +2,14 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import App from './App';
-/* 先寻找有没有app.vue，再寻找有没有app.js */
 import router from './router';
 import fastClick from 'fastclick';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'styles/reset.css';
-import 'styles/border.css';
 import 'styles/iconfont.css';
+import 'styles/border.css';
 import 'swiper/dist/css/swiper.css';
 
-
-/* 在这里引用重置样式的css */
 
 Vue.config.productionTip = false;
 fastClick.attach(document.body);

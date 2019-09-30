@@ -94,6 +94,8 @@ export default{
     height: 0
     padding-bottom: 50% */
     /* 底部填充50%的宽度比，即宽：高=2:1 */
+  .icons
+    margin-top: .1rem
     .icon
       position: relative
       overflow: hidden
