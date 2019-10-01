@@ -4,3 +4,6 @@
 4、 在webpack.base.conf.js中的resolve里改文件路径别名（修改完webpack文件后要重启服务器）
 5、使用npm安装时在模块名后面加"@版本号"选择版本
 6、设置scoped的样式表中可以通过.class1 >>> .class2 的方法使两个不同区域的样式互通
+7、json等数据文件需要放置到static文件夹下才能访问
+8、若想设置不想上传到github的文件可以在gitignore文件里面设置
+9、转发机制：在config/index.js里面设置转发路径和目的路径（proxyTable）

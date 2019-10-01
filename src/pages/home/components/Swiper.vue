@@ -1,8 +1,9 @@
 <template>
  <div class="wrapper">
- <swiper :options="swiperOption">
+ <swiper :options="swiperOption" v-if="showSwiper">
+   <!-- v-if设置只有数据发送后才渲染轮播图，防止轮播图默认在最后一页 -->
     <!-- slides -->
-    <swiper-slide v-for="item of swiperList" :key="item.id">
+    <swiper-slide v-for="item of list" :key="item.id">
       <img class="swiper-img" :src="item.imgUrl"/>
     </swiper-slide>
     <!-- Optional controls -->
@@ -16,22 +17,22 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    list: Array
+  },
   data () {
     return{
        swiperOption: {
          pagination: '.swiper-pagination',
          loop: true
          /* 设置是否循环 */
-       },
-       swiperList: [{
-         id: '0001',
-         imgUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20199/249dfa53de67b8824a96f9821e58f30d.jpg_750x200_48bf24d9.jpg'
-       },{
-         id: '0002',
-         imgUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20199/47f7d9e9fb7c5cb88a1245180c9ca5b4.jpg_750x200_de4858e1.jpg'
-       }],
+       }
     }
-  },
+  },computed: {
+      showSwiper () {
+        return this.list.length
+      }
+  }
 }
 </script>
 
