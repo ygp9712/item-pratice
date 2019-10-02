@@ -1,19 +1,22 @@
 <template>
  <div>
     <city-header></city-header>
+    <city-Search></city-Search>
  </div>
 </template>
 
 <script>
     import CityHeader from './components/header';
+    import CitySearch from './components/search';
     export default {
       name: 'City',
       components: {
         CityHeader: CityHeader,
+        CitySearch: CitySearch,
       }
     }
 </script>
 
 <style lang="stylus" scoped>
-  
+
 </style>
