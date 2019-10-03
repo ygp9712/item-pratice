@@ -90,7 +90,7 @@
 .border-rightbottom::after,
 .border-bottomleft::before {
     border-bottom: 1px solid #888888;
-    /* transform-origin: 0 100%; */
+    /* transform-origin: 0 100%;  */
 }
 .border-left::before,
 .border-topleft::after,
