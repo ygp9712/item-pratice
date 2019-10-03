@@ -1,6 +1,7 @@
 <template>
   <div class="list" ref="wrapper">
     <div class="content">
+      <!-- better-scroll需要外部两层div包裹 -->
       <div class="area">
         <div class="title border-topbottom">当前城市
         </div>
@@ -23,7 +24,12 @@
             </div>
           </div>
       </div>
-      <div class="area" v-for="(item,key) of cities" :key="key">
+      <div class="area" 
+        v-for="(item,key) of cities" 
+        :key="key"
+        :ref="key"
+      >
+      <!-- 通过ref寻找到该栏并函数跳转 -->
         <div class="title border-topbottom">{{key}}
         </div>
         <div class="item-list">
@@ -46,10 +52,22 @@ export default {
   name: 'CityList',
   props:{
     hotCities: Array,
-    cities: Object
+    cities: Object,
+    letter: String
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+  watch: {
+    /* 监听器，一旦letter发生改变便处理函数 */
+    letter () {
+      if(this.letter)
+      {
+        const element = this.$refs[this.letter][0];
+        this.scroll.scrollToElement(element); 
+        /* scrollToElement需要的是dom元素，而refs取到的是集合，因此要再加一个[0] */ 
+      }
+    }
   }
 }
 </script>
