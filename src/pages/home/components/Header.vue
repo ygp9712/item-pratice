@@ -8,17 +8,24 @@
       </div>
     <router-link to='/city'>
       <div class="header-right">
-          {{this.city}}<span class="iconfont arrow-icon">&#58954;</span>
+          {{this.city}}
+          <!-- 这里的city是使用mapState映射的值 -->
+          <span class="iconfont arrow-icon">&#58954;</span>
       </div>
     </router-link>
   </div>
 </template>
 
 <script>
+import { mapState,mapGetters } from 'vuex'
+/* 优化从$store.state中取值 */
 export default {
   name:'HomeHeader',
-  props:{
-    city: String 
+  computed: {
+    ...mapState(['city']),
+    ...mapGetters(['doubleCity'])
+    /* 将state中的city属性映射到该组件中 */
+    /* vuex中的Getter要通过mapGetter使用 */
   }
 }
 </script>
@@ -50,7 +57,8 @@ export default {
        padding-left: .2rem
 
      .header-right
-       width: 1.24rem
+       min-width: 1.04rem
+       padding: 0 .1rem
        float: right
        color: #fff
        text-align: center

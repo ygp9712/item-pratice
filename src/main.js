@@ -5,6 +5,7 @@ import App from './App';
 import router from './router';
 import fastClick from 'fastclick';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
+import store from './store';
 import 'styles/reset.css';
 import 'styles/iconfont.css';
 import 'styles/border.css';
@@ -19,8 +20,9 @@ Vue.use(VueAwesomeSwiper);
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>',
 });
-
 /* 路由就是根据网址的不同，返回不同的内容给用户 */
+/* 这里注册了store后数据会被派发给每个组件 */

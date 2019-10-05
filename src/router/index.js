@@ -5,6 +5,7 @@ import City from '@/pages/city/City';
 
 /* import HelloWorld from '@/components/HelloWorld'; */
 /* @符号指的是src这个目录 */
+/* vue有两种方式跳转，一种是直接使用route-link超链接跳转，一种是通过编程使用$router.push方法 */
 Vue.use(Router);
 
 export default new Router({

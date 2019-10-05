@@ -1,6 +1,6 @@
 <template>
 <div>
-  <home-header :city="city">
+  <home-header>
 </home-header>
 <home-swiper :list="swiperList">
 </home-swiper>
@@ -31,7 +31,6 @@ export default {
     HomeWeekend: HomeWeekend,
   },data () {
       return {
-        city: '',
         swiperList: [],
         iconList: [],
         recommendList: [],
@@ -48,7 +47,6 @@ export default {
       if (res.ret && res.data) {
        /* 判断意思是成功接收到json并且有数据（json里面存有成功码ret） */
         const data = res.data;
-        this.city = data.city;
         this.swiperList = data.swiperList;
         this.iconList = data.iconList;
         this.recommendList = data.recommendList;

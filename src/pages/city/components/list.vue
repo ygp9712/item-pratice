@@ -7,7 +7,7 @@
         </div>
           <div class="button-list">
             <div class="button-wrapper">
-              <div class="button">北京
+              <div class="button">{{this.currentCity}}
               </div>
             </div>
           </div>
@@ -18,7 +18,8 @@
           <div class="button-list">
             <div class="button-wrapper" 
               v-for="item of hotCities" 
-              :key="item.id">
+              :key="item.id"
+              @click="handleCityClick(item.name)">
               <div class="button">{{item.name}}
               </div>
             </div>
@@ -37,6 +38,7 @@
             class="item border-bottom" 
             v-for="innerItem of item"
             :key="innerItem.id"
+            @click="handleCityClick(innerItem.name)"
           >
             {{innerItem.name}}
           </div>
@@ -47,7 +49,8 @@
 </template>
 
 <script>
-import Bscroll from 'better-scroll'
+import Bscroll from 'better-scroll';
+import { mapState,mapMutations } from 'vuex';
 export default {
   name: 'CityList',
   props:{
@@ -55,8 +58,20 @@ export default {
     cities: Object,
     letter: String
   },
-  mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+  methods:{
+    handleCityClick (city) {
+      /* this.$store.dispatch('changeCity',city); 
+      使用mapMutations后等同下面这条代码*/
+      this.changeCity(city);
+      this.$router.push('/');
+    },
+    ...mapMutations(['changeCity'])
+    /* 用法和mapState相似 */
+  },
+  computed: {
+    ...mapState({
+      currentCity: 'city'
+    }),
   },
   watch: {
     /* 监听器，一旦letter发生改变便处理函数 */
@@ -68,7 +83,11 @@ export default {
         /* scrollToElement需要的是dom元素，而refs取到的是集合，因此要再加一个[0] */ 
       }
     }
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.wrapper)
   }
+  /* 一但页面挂载就使用better-scroll */
 }
 </script>
 
