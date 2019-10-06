@@ -29,7 +29,7 @@ module.exports = {
     'import/extensions': ['error', 'always', {
       js: 'never',
       vue: 'never',
-      "linebreak-style": ["error", process.env.NODE_ENV === 'prod' ? "unix" : "windows"]
+      "linebreak-style": ["error", process.env.NODE_ENV === "windows"]
     }],
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions

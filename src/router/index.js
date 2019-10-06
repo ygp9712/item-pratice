@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/pages/home/Home';
 import City from '@/pages/city/City';
+import Detail from '@/pages/detail/Detail';
 
 /* import HelloWorld from '@/components/HelloWorld'; */
 /* @符号指的是src这个目录 */
@@ -21,6 +22,12 @@ export default new Router({
       path: '/city',
       name: 'City',
       component: City,
+    },
+    {
+      path: '/detail/:id',
+      /* 动态路由,":id"是变化的部分 */
+      name: 'Detail',
+      component: Detail,
     },
   ],
 });
