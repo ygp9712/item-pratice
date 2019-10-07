@@ -48,8 +48,14 @@ export default {
     }
   },
   activated () {
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', this.handleScroll);
+  /* !!!全局事件需要及时解绑!!!，不然在别的页面也会触发该事件 */
   /* 给用户窗口绑定一个监听事件（事件，函数），当事件一执行就触发事件 */
+  },
+  deactivated () {
+    /* activated的反事件，在页面即将切换（隐藏）的时候触发 */
+    window.removeEventListener('scroll', this.handleScroll);
+    /* 解绑全局事件的操作 */
   }
 }
 </script>
