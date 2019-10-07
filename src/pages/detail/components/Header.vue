@@ -63,6 +63,7 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl'
   .header-abs
+    z-index: 10
     position: absolute
     top: .2rem
     left: .2rem
@@ -76,6 +77,7 @@ export default {
       color: #fff
       font-size: .4rem
   .header-fixed
+      z-index: 10
       position: fixed
       top: 0
       left: 0
