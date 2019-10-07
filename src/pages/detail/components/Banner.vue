@@ -49,6 +49,7 @@ export default {
 
 <style lang="stylus" scoped>
    .banner
+     z-index: -1
      position: relative
      overflow: hidden
      height: 0
