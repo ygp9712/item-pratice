@@ -13,6 +13,7 @@ module.exports = {
     proxyTable: {
       '/api':{
         target: 'http://localhost:8080',
+        /* 在这里设置转发到后端的地址域 */
         pathRewrite: {
           '^/api': '/static/datas'
         }

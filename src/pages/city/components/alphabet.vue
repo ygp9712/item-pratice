@@ -5,10 +5,11 @@
       v-for="item of letters"
       :key="item"
       :ref="item"
-      @touchstart="handleTouchStart"
+      @touchstart.prevent="handleTouchStart"
       @touchmove="handleTouchMove"
       @touchend="handleTouchend"
       @click="handleLetterClick">
+      <!-- prevent修饰符阻止浏览器默认行为 -->
         {{item}}
       </li>
     </ul>
