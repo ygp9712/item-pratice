@@ -11,19 +11,22 @@
         </div>
       </div>
     </div>
-    <common-gallery 
-    :imgs="galleryImgs" 
-    v-show="showGallery"
-    @close="handleGalleryClose"
-    >
-      <!-- 若一开始v-show为false则轮播图计算宽度会出错 -->
-    </common-gallery>
+    <fade-animation>
+      <common-gallery 
+      :imgs="galleryImgs" 
+      v-show="showGallery"
+      @close="handleGalleryClose"
+      >
+        <!-- 若一开始v-show为false则轮播图计算宽度会出错 -->
+      </common-gallery>
+    </fade-animation>
   </div>
    
 </template>
 
 <script>
-import CommonGallery from 'common/gallery/gallery'
+import CommonGallery from 'common/gallery/gallery';
+import FadeAnimation from 'common/fade/FadeAnimation';
 export default {
   name: 'DetailBanner',
   props: {
@@ -32,7 +35,8 @@ export default {
     galleryImgs: Array
   },
   components: {
-    CommonGallery: CommonGallery
+    CommonGallery: CommonGallery,
+    FadeAnimation: FadeAnimation
   },
   data () {
     return {
