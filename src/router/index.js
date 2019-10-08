@@ -25,9 +25,14 @@ export default new Router({
     },
     {
       path: '/detail/:id',
-      /* 动态路由,":id"是变化的部分 */
+      /* 动态路由,":id"是变化的部分,由router-link设置 */
       name: 'Detail',
       component: Detail,
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    /* savedPosition保存滚动位置，暂时无需求 */
+    return { x: 0, y: 0 };
+    /* 设置全部页面默认滚动到头部 */
+  },
 });

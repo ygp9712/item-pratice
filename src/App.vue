@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <keep-alive>
+    <keep-alive exclude="Detail">
+      <!-- 设置Detail页面不会缓存到内存中去 -->
       <router-view/>
     </keep-alive>
     <!-- routerview显示当前路由地址所对应的内容 -->
