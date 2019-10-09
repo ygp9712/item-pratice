@@ -75,14 +75,18 @@ export default {
        background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.8))
        /* 这条样式给info框添加了渐变阴影,防止字体颜色影响图片效果 */
        .banner-title
+         position:relative
+         top: -10px
          font-size: .36rem
          flex: 1
          padding: 0 .2rem
        .banner-number
+         position: absolute
+         bottom: 40px
+         left: 10px
          padding: 0 .4rem
          font-size: .24rem
          line-height: .32rem
-         margin-top .14rem
          height: .32rem
          border-radius: .2rem
          background: rgba(0,0,0,.8)

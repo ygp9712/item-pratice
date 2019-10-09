@@ -27,6 +27,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  .item
+    background: #ffffff
   .item-title-icon
     position: relative
     left: .06rem

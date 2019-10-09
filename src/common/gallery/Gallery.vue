@@ -58,7 +58,7 @@ export default {
     flex-direction: column
     justify-content: center
     /* 将内容居中 */
-    z-index: 99
+    z-index: 101
     position: fixed
     /* 固定的定位，即使滚动也不会改变位置 */
     left: 0
