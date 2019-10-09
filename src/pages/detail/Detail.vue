@@ -7,6 +7,7 @@
       :galleryImgs="galleryImgs"
     ></detail-banner>
     <div class="content">
+      <detail-introduce></detail-introduce>
       <detail-list :list="list"></detail-list>
     </div>
   </div>
@@ -16,6 +17,7 @@
 import DetailHeader from './components/Header';
 import DetailBanner from './components/Banner';
 import DetailList from'./components/List';
+import DetailIntroduce from './components/introduce';
 import axios from 'axios';
 export default {
   name: 'Detail',
@@ -23,6 +25,7 @@ export default {
     DetailHeader: DetailHeader,
     DetailBanner: DetailBanner,
     DetailList: DetailList,
+    DetailIntroduce: DetailIntroduce,
   },
   data () {
     return {

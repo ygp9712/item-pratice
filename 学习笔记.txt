@@ -9,3 +9,5 @@
 9、转发机制：在config/index.js里面设置转发路径和目的路径（proxyTable）
 10、替换icon需要：①复制四个图标文件②将iconfont.css里面的data:application条目更新为新的
 11、安装babel-polyfill这个第三方的包可以帮助某些浏览器判断并增加ES6的新特性（例如promise）
+12、vue项目简易打包上线步骤：①npm run build,webpack会自动打包编译，生产能被浏览器解析的代码
+                                                  ②在项目根路径生成一个dist目录，内部的文件便是放到后台的内容

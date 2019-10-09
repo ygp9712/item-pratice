@@ -52,6 +52,7 @@ module.exports = {
   },
 
   build: {
+    /* 此处配置打包后的项目设置 */
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
 
@@ -59,6 +60,7 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    /* 此处设置打包项目运行的位置 */
 
     /**
      * Source Maps
