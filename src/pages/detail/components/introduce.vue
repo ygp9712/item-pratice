@@ -42,7 +42,7 @@ export default {
 @import '~styles/varibles.styl'
   .introduce
     position: relative
-    z-index: 100
+    z-index: 6
     top: -5px
     box-sizing: border-box
     /* 若要width100%下padding运作则需要使用border-box？ */
