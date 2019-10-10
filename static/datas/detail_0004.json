@@ -1,0 +1,28 @@
+{
+  "ret": true,
+  "data": {
+    "sightName": "阿尔卑斯山滑雪场",
+    "bannerImg": "//img1.qunarzz.com/sight/p0/201303/04/3dc3e87356026a63c8d65eac.jpg_600x330_66ae7835.jpg",
+    "galleryImgs": 
+     ["http://img1.qunarzz.com/sight/p0/201303/04/3dc3e87356026a63c8d65eac.jpg_r_800x800_77690805.jpg", 
+      "http://img1.qunarzz.com/sight/p0/201307/23/1a1904fec9697e35c8d65eac.jpg_r_800x800_febafdb7.jpg", 
+      "http://img1.qunarzz.com/sight/p0/201311/28/9eabdfdc9cf182af546790cec10aa373.jpg_r_800x800_68475141.jpg",
+      "http://img1.qunarzz.com/sight/p0/201311/28/163ed423264b5cfd9b2bdf99b1df770d.jpg_r_800x800_f93d28ae.jpg",
+      "http://img1.qunarzz.com/sight/p0/201307/23/608f4886c564e855c8d65eac.jpg_r_800x800_c657a1a0.jpg"],
+    "evaluate": "4.9",
+    "commentNum": "1312",
+    "strategyNum": "0", 
+    "position": "广东省深圳市南山区世界之窗景区",
+    "categoryList": [{
+        "title": "门票",
+        "children": [{
+          "title": "滑冰票",
+          "fee": "44"
+        },{
+          "title": "套票（滑冰+嬉学+冰雕园）",
+          "fee": "67"
+        }],
+        "flagMoee" : "false"
+      }]
+  }
+}

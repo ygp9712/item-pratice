@@ -7,7 +7,7 @@
       class="item border-bottom" 
       v-for="item of list" 
       :key="item.id"
-      :to="'/detail/' + item.id" >
+      :to="{ name: 'Detail',params: { id: item.id }  }" >
         <!-- <div class="item-img-wrap">
            图片的包裹，用来撑开图片，防止抖动
            </div>  -->

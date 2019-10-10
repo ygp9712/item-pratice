@@ -1,0 +1,71 @@
+{
+  "ret": true,
+  "data": {
+    "sightName": "锦绣中华民俗村(AAAAA景区)",
+    "bannerImg": "//img1.qunarzz.com/sight/p0/1910/40/4053f748753ef22ea3.water.png_600x330_5a4c9ca3.png",
+    "galleryImgs": 
+     ["http://img1.qunarzz.com/sight/p0/1910/40/4053f748753ef22ea3.water.png_r_800x800_c55bdb51.png", 
+      "http://img1.qunarzz.com/sight/p0/1601/8f/8f4871e82d670ece90.water.jpg_r_800x800_d315577c.jpg", 
+      "http://img1.qunarzz.com/sight/p0/1906/92/92897643db704e02a3.img.jpg_r_800x800_454281da.jpg",
+      "http://img1.qunarzz.com/sight/p0/1601/f2/f2425c4c4488f76390.water.jpg_r_800x800_f29df413.jpg",
+      "http://img1.qunarzz.com/sight/p0/1412/44/570dea8209751ae80caaec0a31242adb.water.jpg_r_800x800_41538bf2.jpg"],
+    "evaluate": "4.9",
+    "commentNum": "20702",
+    "strategyNum": "19", 
+    "position": "广东省深圳市南山区深南大道9003号华侨城锦绣中华苏州街（近华侨城地铁站D出口）",
+    "categoryList": [{
+        "title": "活动票",
+        "children": [{
+          "title": "[限量抢购]聊斋夜场票",
+          "fee": "19.5"
+        },{
+          "title": "[万圣节]聊斋夜场票",
+          "fee": "59"
+        },{
+          "title": "[促销抢购]华侨城深圳六大景区畅游卡",
+          "fee": "476"
+        }],
+        "flagMoee" : "true"
+      }, {
+        "title": "全天门票",
+        "children": [{
+          "title": "成人票",
+          "fee": "208"
+        },{
+          "title": "[港澳通行证专享]日夜场通票",
+          "fee": "200"
+        },{
+          "title": "儿童/老人票",
+          "fee": "110"
+        },{
+          "title": "套票（含电瓶车+游船）",
+          "fee": "245"
+        }],
+        "flagMoee" : "true"
+        
+      }, {
+        "title": "旅行跟拍",
+        "children": [{
+          "title": "深圳旅行跟拍2小时",
+          "fee": "399"
+        },{
+          "title": "深圳旅行跟拍3小时",
+          "fee": "549"
+        },{
+          "title": "深圳旅行跟拍4小时",
+          "fee": "699"
+        },{
+          "title": "深圳旅行跟拍8小时",
+          "fee": "1199"
+        }],
+        "flagMoee" : "true"
+      }, {
+        "title": "一日游",
+        "children": [{
+          "title": "【深圳出发】中英街+地王大厦+锦绣中华民俗村1日游",
+          "fee": "399"
+        }],
+        "flagMoee" : "false"
+      }]
+  }
+}

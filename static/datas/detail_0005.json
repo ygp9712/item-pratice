@@ -1,0 +1,39 @@
+{
+  "ret": true,
+  "data": {
+    "sightName": "青青世界(AAAA景区)",
+    "bannerImg": "http://img1.qunarzz.com/sight/p0/1412/6f/5d803c45af314b68f4652362fca42d11.water.jpg_600x330_d081d5d0.jpg",
+    "galleryImgs": 
+     ["http://img1.qunarzz.com/sight/p0/1412/6f/5d803c45af314b68f4652362fca42d11.water.jpg_r_800x800_6ca1be01.jpg", 
+      "http://img1.qunarzz.com/sight/p0/1504/2b/2b5bd4e492ba8d43.water.jpg_r_800x800_ad228e00.jpg", 
+      "http://img1.qunarzz.com/sight/p0/1504/4d/4db8a74c30f97af7.water.jpg_r_800x800_96b99c85.jpg",
+      "http://img1.qunarzz.com/sight/p0/1504/e5/e540a7378d092df5.water.jpg_r_800x800_a4f6478b.jpg",
+      "http://img1.qunarzz.com/sight/p0/1504/f5/f55e9cdd943d47bd.water.jpg_r_800x800_bd1d4231.jpg"],
+    "evaluate": "4.7",
+    "commentNum": "3548",
+    "strategyNum": "2", 
+    "position": "广东省深圳市南山区月亮湾青青街1号",
+    "categoryList": [{
+        "title": "门票",
+        "children": [{
+          "title": "成人票",
+          "fee": "75"
+        },{
+          "title": "儿童票",
+          "fee": "40"
+        },{
+          "title": "老人票",
+          "fee": "40"
+        }],
+        "flagMoee" : "true"
+        
+      }, {
+        "title": "电子导游",
+        "children": [{
+          "title": "手机电子导游讲解",
+          "fee": "7"
+        }],
+        "flagMoee" : "false"
+      }]
+  }
+}

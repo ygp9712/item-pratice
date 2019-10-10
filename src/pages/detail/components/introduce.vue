@@ -3,13 +3,13 @@
     <div class="card-container">
       <div class="intro-card left-card border-right">
         <div>
-          <span class="comment-score">4.5</span>
+          <span class="comment-score">{{evalute}}</span>
           <span class="comment-text">分</span>
           <span class="comment-desc">很棒</span>
         </div>
         <div>
-          <span class="comment-total">6666条评论</span>
-          <span class="comment-total">6条攻略</span>
+          <span class="comment-total">{{commentNum}}条评论</span>
+          <span class="comment-total" v-show="Number(strategyNum)">{{strategyNum}}条攻略</span>
           <span class="iconfont right-icon">&#58880;</span>
         </div>
       </div>
@@ -26,7 +26,8 @@
       </div>
     </div>
     <div class="intro-posi border-top">
-      <span class="iconfont posi-icon">&#58895;</span>广东省深圳市盐田区大梅沙东部华侨城
+      <span class="iconfont posi-icon">&#58895;</span>
+      <p class="posi-text">{{position}}</p>
       <span class="iconfont right-icon">&#58880;</span>
     </div>
   </div>
@@ -34,7 +35,13 @@
 
 <script>
 export default {
-  name: 'DetailIntroduce'
+  name: 'DetailIntroduce',
+  props: {
+    evalute: String,
+    commentNum: String,
+    strategyNum: String,
+    position: String
+  }
 }
 </script>
 
@@ -48,7 +55,6 @@ export default {
     /* 若要width100%下padding运作则需要使用border-box？ */
     border-radius: 5px 5px 0 0
     width: 100%
-    height: 100px
     margin: 0 0 5px
     padding: 5px 10px 0
     background: #fff
@@ -99,16 +105,18 @@ export default {
           color: $greyColor
     .intro-posi
       overflow hidden
-      height: 38.4px
-      line-height: 38.4px
+      padding: 10px 0
       font-size: 14px
       .posi-icon
+        position: absolute
         color: $greyColor
         font-size: 16px
         margin: 0 10px 0 0
+      .posi-text
+        padding: 0 28px
       .right-icon
         position: absolute
-        top: 0
+        top: 25%
         right: 0px
         font-size: 18px
         color: $greyColor
