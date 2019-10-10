@@ -1,30 +1,36 @@
 <template>
   <div>
-    <div
-      class="item"
-      v-for="(item, index) of list"
-      :key="index"
-    >
+    <div class="item" 
+    v-for="(item, index) of list" 
+    :key="index">
       <div class="item-title border-bottom">
         <span class="item-title-icon"></span>
         {{item.title}}
       </div>
       <div class="item-ul">
-        <div class="item-li border-bottom" 
-        v-for="(thing, index) of item.children" 
-        :key="index">
-          <div class="ticket-name">
-            {{thing.title}}
-          </div>
+        <div
+          class="item-li border-bottom"
+          v-for="(thing, index) of item.children"
+          :key="index"
+          v-show="item.flagMoee ? index<2 : index<item.children.length"
+        >
+        <!-- 先在json里面输入标识符的值然后在组件内部判断 -->
+          <div class="ticket-name">{{thing.title}}</div>
           <div class="ticket-fee">
-            ¥<em class="num-price">{{thing.fee}}</em>
+            ¥
+            <em class="num-price">{{thing.fee}}</em>
             <span class="num-word">起</span>
             <div class="iconfont down-icon">&#58881;</div>
           </div>
         </div>
       </div>
-      <div class="item-more" v-if="hasMore" @click="showMore">
-        查看剩余产品<span class="iconfont more-down-icon">&#58883;</span>
+      <div
+        v-show="item.flagMoee && item.children.length>2 ? true : false"
+        class="item-more"
+        @click="showMore(item)"
+      >
+        查看剩余产品
+        <span class="iconfont more-down-icon">&#58883;</span>
       </div>
     </div>
   </div>
@@ -32,32 +38,32 @@
 
 <script>
 export default {
-  name: 'DetailList',
+  name: "DetailList",
   props: {
     list: Array
   },
-  data () {
+  data() {
     return {
-      hasMore: true
-    }
+    };
   },
   computed: {
-    showedList: function () {
-      return this.list
+    showedList: function() {
+      return this.list;
     }
   },
   methods: {
-    showMore () {
-      console.log(this.showedList);
+    showMore(item) {
+      item.flagMoee = false;
     }
   }
-}
+};
 </script>
 
 <style lang="stylus" scoped>
-@import '~styles/mixins.styl'
-@import '~styles/varibles.styl'
-  .item
+@import '~styles/mixins.styl';
+@import '~styles/varibles.styl';
+
+.item
     background: #ffffff
     margin-bottom: 10px
   .item-title-icon

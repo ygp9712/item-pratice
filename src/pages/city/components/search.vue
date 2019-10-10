@@ -11,6 +11,7 @@
     <div class="search-content" 
          ref="content"
          v-show="keyword">
+         <!-- ref用来获取dom元素 -->
          <!-- 加一个v-show是因为默认情况下也存在没有找到的提示，需要隐藏 -->
       <ul>
         <li class="search-item border-bottom"
