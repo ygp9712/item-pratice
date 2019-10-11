@@ -12,6 +12,7 @@
         :commentNum="commentNum"
         :strategyNum="strategyNum"
         :position="position"></detail-introduce>
+      <detail-tab></detail-tab>
       <detail-list :list="list"></detail-list>
     </div>
   </div>
@@ -22,6 +23,7 @@ import DetailHeader from './components/Header';
 import DetailBanner from './components/Banner';
 import DetailList from'./components/List';
 import DetailIntroduce from './components/introduce';
+import DetailTab from './components/Tab';
 import axios from 'axios';
 export default {
   name: 'Detail',
@@ -30,6 +32,7 @@ export default {
     DetailBanner: DetailBanner,
     DetailList: DetailList,
     DetailIntroduce: DetailIntroduce,
+    DetailTab: DetailTab,
   },
   data () {
     return {
@@ -72,6 +75,6 @@ export default {
 
 <style lang="stylus" scoped>
   .content
-    height: 20rem
+    height: 35rem
     background: #eeeeee
 </style>
