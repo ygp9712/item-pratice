@@ -29,6 +29,7 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~styles/mixins.styl'
+@import '~styles/varibles.styl'
   .title
     line-height: .8rem
     background: #eee
@@ -42,13 +43,14 @@ export default {
   .item-info
     padding: 7px 10px 10px
     .item-title
-      color: #212121
+      color: $titleColor
       line-height: .54rem
       font-size: .32rem
       ellipsis()
     .item-text
       line-height: .4rem
-      color: #616161
+      font-size: .24rem
+      color: $textColor
       padding-right: .9rem
       ellipsis()
 </style>

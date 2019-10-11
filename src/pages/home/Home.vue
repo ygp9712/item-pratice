@@ -37,6 +37,7 @@ export default {
         iconList: [],
         recommendList: [],
         weekendList: [],
+        
       }
   },
   computed: {

@@ -60,31 +60,51 @@
       "id": "0001",
       "imgUrl":"http://img1.qunarzz.com/sight/p0/201301/16/4593d3d5a27f445b93835fbb.jpg_200x200_2fcb6c78.jpg",
       "title": "东部华侨城大侠谷",
-      "text": "峡谷中的刺激游乐园~玩的就是心跳！"
+      "text": "峡谷中的刺激游乐园~玩的就是心跳！",
+      "commentNum": "6666",
+      "fee": "175",
+      "position": "盐田区",
+      "tag": "可订明日"
      },
      {
       "id": "0002",
       "imgUrl":"http://img1.qunarzz.com/sight/p0/1603/9d/9d8c0e9a01bba92e90.water.jpg_200x200_86f2e623.jpg",
       "title": "锦绣中华",
-      "text": "一步迈进历史，一天游遍中华"
+      "text": "一步迈进历史，一天游遍中华",
+      "commentNum": "20702",
+      "fee": "59",
+      "position": "南山区",
+      "tag": "随买随用"
      },
      {
       "id": "0003",
       "imgUrl":"http://img1.qunarzz.com/sight/p0/1907/79/79e4ff041bd3d2a3a3.water.jpg_200x200_95356ed7.jpg",
       "title": "深圳欢乐谷",
-      "text": "玛雅水公园，夏日玩水好去处"
+      "text": "玛雅水公园，夏日玩水好去处",
+      "commentNum": "34105",
+      "fee": "39.9",
+      "position": "南山区",
+      "tag": "可订明日"
      },
      {
       "id": "0004",
       "imgUrl":"http://img1.qunarzz.com/sight/p0/201303/04/3dc3e87356026a63c8d65eac.jpg_200x200_1de448b6.jpg",
       "title": "阿尔卑斯山滑雪谷",
-      "text": "体会滑雪快感，嬉雪、观雪的绝佳去处"
+      "text": "",
+      "commentNum": "1312",
+      "fee": "44",
+      "position": "南山区",
+      "tag": ""
      },
      {
       "id": "0005",
       "imgUrl":"http://img1.qunarzz.com/sight/p0/1412/6f/5d803c45af314b68f4652362fca42d11.water.jpg_200x200_42a7956b.jpg",
       "title": "青青世界",
-      "text": "融入大自然、体会田园之乐"
+      "text": "融入大自然、体会田园之乐",
+      "commentNum": "3548",
+      "fee": "75",
+      "position": "福田区",
+      "tag": "随买随用"
      }],
     "weekendList": [{
       "id": "0001",
