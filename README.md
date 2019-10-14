@@ -1,4 +1,4 @@
-# 仿去哪儿网移动端项目
+# 仿[去哪儿网](http://piao.qunar.com/touch/)移动端项目
 
 ## 技术栈
 
@@ -66,10 +66,17 @@ pages () {
 ```
 
 ## 还原效果
+左边的是项目图，右边的是官网图
+<table>
+<tr>
+<td><center><img src="static/githubPic/1.1.png"></center>
+<td><center><img src="static/githubPic/1.2.png"></center>
+</td>
+</tr>
 
-<figure class="half">
+<tr>
+<td><center><img src="static/githubPic/2.1.png"></center>
+<td><center><img src="static/githubPic/2.2.png"></center>
+</tr>
 
-![项目图](static/githubPic/1.1.png){width: 30%,height:30%}
-
-![官网图](static/githubPic/1.2.png){width: 30%,height:30%}
-</figure>
+</table>
