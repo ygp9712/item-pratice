@@ -56,8 +56,20 @@ pages () {
     </router-link>
 ```
 
+最后，在detail.vue上发送具体的请求
+
+``` javascript
+    getDetailInfo () {
+      axios.get('/api/detail_'+ this.$route.params.id+ '.json', 
+      {}).then (this.handleGetDataSucc)
+    }
+```
+
 ## 还原效果
 
-![项目图](static/githubPic/1.1.png)
+<figure class="half">
 
-![官网图](static/githubPic/1.2.png)
+![项目图](static/githubPic/1.1.png){width: 30%,height:30%}
+
+![官网图](static/githubPic/1.2.png){width: 30%,height:30%}
+</figure>
