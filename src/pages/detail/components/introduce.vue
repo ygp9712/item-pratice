@@ -40,9 +40,9 @@ export default {
     evalute: String,
     commentNum: String,
     strategyNum: String,
-    position: String
-  }
-}
+    position: String,
+  },
+};
 </script>
 
 <style lang="stylus" scoped>

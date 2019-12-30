@@ -11,8 +11,8 @@
 
 <script>
 export default {
-  name: 'CityHeader'
-}
+  name: 'CityHeader',
+};
 </script>
 
 <style lang="stylus">
@@ -34,5 +34,4 @@ export default {
        text-align: center
        font-size :.4rem
        color: #fff
-       
 </style>

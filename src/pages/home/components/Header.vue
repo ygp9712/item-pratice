@@ -17,22 +17,22 @@
 </template>
 
 <script>
-import { mapState,mapGetters } from 'vuex'
+import { mapState, mapGetters } from 'vuex';
 /* 优化从$store.state中取值 */
 export default {
-  name:'HomeHeader',
+  name: 'HomeHeader',
   computed: {
     ...mapState(['city']),
-    ...mapGetters(['doubleCity'])
+    ...mapGetters(['doubleCity']),
     /* 将state中的city属性映射到该组件中 */
     /* vuex中的Getter要通过mapGetter使用 */
-  }
-}
+  },
+};
 </script>
 
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
-  .header 
+  .header
      display: flex
      line-height: $headerHeight
      background: $bgColor
@@ -44,7 +44,6 @@ export default {
        .back-icon
          text-align: center
          font-size: .4rem
-         
      .header-input
        flex:1
        height: .64rem
@@ -65,6 +64,4 @@ export default {
        .arrow-icon
          margin-left: .05rem
          font-size: .2rem
-
-         
 </style>

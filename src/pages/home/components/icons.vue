@@ -7,7 +7,7 @@
        :key="item.id"
   >
     <div class="icon-img">
-    <img 
+    <img
     class="icon-img-content"
     :src='item.imgUrl'
     />
@@ -21,36 +21,36 @@
 
 <script>
 export default{
-  name:'HomeIcons',
+  name: 'HomeIcons',
   props: {
-    list: Array
+    list: Array,
   },
-  data () {
+  data() {
     return {
       swiperOption: {
-        autoplay: false
+        autoplay: false,
         /* 禁止自动滚动 */
-      }
-    }
+      },
+    };
   },
-  computed:{
-    pages () {
-      const pages = []
-      this.list.forEach((item,index) => {
+  computed: {
+    pages() {
+      const pages = [];
+      this.list.forEach((item, index) => {
         /* forEach对每个数据项都进行操作 */
-        const page = Math.floor(index / 8)
+        const page = Math.floor(index / 8);
         /* 大于8的存放到第2页去 */
-        if (!pages[page]){
-          pages[page] = []
+        if (!pages[page]) {
+          pages[page] = [];
         }
-        pages[page].push(item)
+        pages[page].push(item);
         /* 若为空，则插入数据 */
-      })
-      return pages
-    }
+      });
+      return pages;
+    },
     /* 这个方法将接收到的iconlist拆分到两个page里面去，以达到分页的目的 */
   },
-}
+};
 </script>
 
 <style lang="stylus" scoped>
@@ -76,7 +76,7 @@ export default{
         position:absolute
         top: 0
         left: 0
-        right: 0 
+        right: 0
         bottom: .44rem
         box-sizing: border-box
         padding: .1rem
@@ -88,12 +88,11 @@ export default{
         text-align: center
         position:absolute
         left: 0
-        right: 0 
+        right: 0
         bottom: 0
         height: .44rem
         line-height: .44rem
         color: $darkTextColor
         ellipsis()
-      
 </style>
 

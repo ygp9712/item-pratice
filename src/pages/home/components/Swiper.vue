@@ -18,22 +18,23 @@
 export default {
   name: 'HomeSwiper',
   props: {
-    list: Array
+    list: Array,
   },
-  data () {
-    return{
-       swiperOption: {
-         pagination: '.swiper-pagination',
-         loop: true
-         /* 设置是否循环 */
-       }
-    }
-  },computed: {
-      showSwiper () {
-        return this.list.length
-      }
-  }
-}
+  data() {
+    return {
+      swiperOption: {
+        pagination: '.swiper-pagination',
+        loop: true,
+        /* 设置是否循环 */
+      },
+    };
+  },
+  computed: {
+    showSwiper() {
+      return this.list.length;
+    },
+  },
+};
 </script>
 
 <style lang="stylus" scoped>

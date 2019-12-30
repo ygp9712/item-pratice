@@ -6,16 +6,15 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths webpack-dev-server提供的功能
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
       '/api':{
-        target: 'http://localhost:8080',
+        target: 'http://localhost:3030',
         /* 在这里设置转发到后端的地址域 */
         pathRewrite: {
-          '^/api': '/static/datas'
+           '^/api': 'http://localhost:3030' 
         }
       }
     },

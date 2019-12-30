@@ -16,8 +16,8 @@
         <div class="title border-topbottom">热门城市
         </div>
           <div class="button-list">
-            <div class="button-wrapper" 
-              v-for="item of hotCities" 
+            <div class="button-wrapper"
+              v-for="item of hotCities"
               :key="item.id"
               @click="handleCityClick(item.name)">
               <div class="button">{{item.name}}
@@ -25,8 +25,8 @@
             </div>
           </div>
       </div>
-      <div class="area" 
-        v-for="(item,key) of cities" 
+      <div class="area"
+        v-for="(item,key) of cities"
         :key="key"
         :ref="key"
       >
@@ -34,8 +34,8 @@
         <div class="title border-topbottom">{{key}}
         </div>
         <div class="item-list">
-          <div 
-            class="item border-bottom" 
+          <div
+            class="item border-bottom"
             v-for="innerItem of item"
             :key="innerItem.id"
             @click="handleCityClick(innerItem.name)"
@@ -50,45 +50,45 @@
 
 <script>
 import Bscroll from 'better-scroll';
-import { mapState,mapMutations } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
+
 export default {
   name: 'CityList',
-  props:{
+  props: {
     hotCities: Array,
     cities: Object,
-    letter: String
+    letter: String,
   },
-  methods:{
-    handleCityClick (city) {
-      /* this.$store.dispatch('changeCity',city); 
-      使用mapMutations后等同下面这条代码*/
+  methods: {
+    handleCityClick(city) {
+      /* this.$store.dispatch('changeCity',city);
+      使用mapMutations后等同下面这条代码 */
       this.changeCity(city);
       this.$router.push('/');
     },
-    ...mapMutations(['changeCity'])
+    ...mapMutations(['changeCity']),
     /* 用法和mapState相似 */
   },
   computed: {
     ...mapState({
-      currentCity: 'city'
+      currentCity: 'city',
     }),
   },
   watch: {
     /* 监听器，一旦letter发生改变便处理函数 */
-    letter () {
-      if(this.letter)
-      {
+    letter() {
+      if (this.letter) {
         const element = this.$refs[this.letter][0];
-        this.scroll.scrollToElement(element); 
-        /* scrollToElement需要的是dom元素，而refs取到的是集合，因此要再加一个[0] */ 
+        this.scroll.scrollToElement(element);
+        /* scrollToElement需要的是dom元素，而refs取到的是集合，因此要再加一个[0] */
       }
-    }
+    },
   },
-  mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
-  }
+  mounted() {
+    this.scroll = new Bscroll(this.$refs.wrapper);
+  },
   /* 一但页面挂载就使用better-scroll */
-}
+};
 </script>
 
 <style lang="stylus" scoped>
@@ -105,7 +105,7 @@ export default {
   .list
     overflow: hidden
     /* 使用Better-scoll插件前的准备：不能让页面自主拖动，即超出页面的长度隐藏 */
-    position: absolute 
+    position: absolute
     top: 1.58rem
     left: 0
     right: 0

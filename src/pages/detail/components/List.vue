@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="item" 
-    v-for="(item, index) of list" 
+    <div class="item"
+    v-for="(item, index) of list"
     :key="index">
       <div class="item-title border-bottom">
         <span class="item-title-icon"></span>
@@ -38,24 +38,24 @@
 
 <script>
 export default {
-  name: "DetailList",
+  name: 'DetailList',
   props: {
-    list: Array
+    list: Array,
   },
   data() {
     return {
     };
   },
   computed: {
-    showedList: function() {
+    showedList() {
       return this.list;
-    }
+    },
   },
   methods: {
     showMore(item) {
       item.flagMoee = false;
-    }
-  }
+    },
+  },
 };
 </script>
 

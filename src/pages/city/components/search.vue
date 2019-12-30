@@ -4,23 +4,23 @@
       <input
         v-model= "keyword"
         class="search-input"
-        type="text" 
-        placeholder="请输入城市名或拼音" 
+        type="text"
+        placeholder="请输入城市名或拼音"
       />
     </div>
-    <div class="search-content" 
+    <div class="search-content"
          ref="content"
          v-show="keyword">
          <!-- ref用来获取dom元素 -->
          <!-- 加一个v-show是因为默认情况下也存在没有找到的提示，需要隐藏 -->
       <ul>
         <li class="search-item border-bottom"
-            v-for="item of list" 
+            v-for="item of list"
             :key="item.id"
             @click="handleCityClick(item.name)">
           {{item.name}}
         </li>
-        <li class="search-item border-bottom" 
+        <li class="search-item border-bottom"
             v-show="noData">
             <!-- html模板尽量不要放运算符，可以用计算属性代替 -->
           没有找到匹配数据
@@ -32,62 +32,71 @@
 
 <script>
 import { mapMutations } from 'vuex';
-import Bscroll from 'better-scroll'
+import Bscroll from 'better-scroll';
+
 export default {
   name: 'CitySearch',
   props: {
-    cities: Object
+    cities: Object,
   },
-  data () {
+  data() {
     return {
       keyword: '',
       list: [],
-      timer: null
-    }
+      timer: null,
+    };
   },
-  methods:{
-    handleCityClick (city) {
-      /* this.$store.dispatch('changeCity',city); 
-      使用mapMutations后等同下面这条代码*/
+  methods: {
+    handleCityClick(city) {
+      /* this.$store.dispatch('changeCity',city);
+      使用mapMutations后等同下面这条代码 */
       this.changeCity(city);
       this.$router.push('/');
     },
-    ...mapMutations(['changeCity'])
+    ...mapMutations(['changeCity']),
     /* 用法和mapState相似 */
   },
   computed: {
-    noData () {
+    noData() {
       return !this.list.length;
-    }
+    },
   },
   watch: {
-    keyword () {
+    keyword() {
       if (this.timer) {
         clearTimeout(this.timer);
       }
       if (!this.keyword) {
-        this.list = []
-        return
+        this.list = [];
+        return;
       }
       /* 当输入栏为空时清空list的操作 */
       this.timer = setTimeout(() => {
-        const result = []
-        for(let i in this.cities) {
+        const result = [];
+         for (let i in this.cities) {
           this.cities[i].forEach((value) => {
             if (value.spell.indexOf(this.keyword) > -1
              || value.name.indexOf(this.keyword) > -1) {
               result.push(value)
             }
           })
-        }
+        } 
+        /* for (let i = 0; i < this.cities.length; i += 1) {
+          this.cities[i].forEach((value) => {
+            if (value.spell.indexOf(this.keyword) > -1
+             || value.name.indexOf(this.keyword) > -1) {
+              result.push(value);
+            }
+          });
+        } */
         this.list = result;
-      },100)    
-    }
+      }, 100);
+    },
   },
-  mounted () {
-    this.scroll = new Bscroll(this.$refs.content)
-  }
-}
+  mounted() {
+    this.scroll = new Bscroll(this.$refs.content);
+  },
+};
 </script>
 
 <style lang="stylus" scoped>
@@ -118,5 +127,4 @@ export default {
       line-height: .62rem
       padding-left: .2rem
       background: #fff
-      
 </style>

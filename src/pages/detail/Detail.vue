@@ -19,22 +19,23 @@
 </template>
 
 <script>
+import axios from 'axios';
 import DetailHeader from './components/Header';
 import DetailBanner from './components/Banner';
-import DetailList from'./components/List';
+import DetailList from './components/List';
 import DetailIntroduce from './components/introduce';
 import DetailTab from './components/Tab';
-import axios from 'axios';
+
 export default {
   name: 'Detail',
   components: {
-    DetailHeader: DetailHeader,
-    DetailBanner: DetailBanner,
-    DetailList: DetailList,
-    DetailIntroduce: DetailIntroduce,
-    DetailTab: DetailTab,
+    DetailHeader,
+    DetailBanner,
+    DetailList,
+    DetailIntroduce,
+    DetailTab,
   },
-  data () {
+  data() {
     return {
       sightName: '',
       bannerImg: '',
@@ -45,16 +46,15 @@ export default {
       position: '',
       list: [],
       lastDetail: '',
-    }
+    };
   },
   methods: {
-    getDetailInfo () {
-      axios.get('/api/detail_'+ this.$route.params.id+ '.json', 
-      {}).then (this.handleGetDataSucc)
+    getDetailInfo() {
+      axios.get(`/api/getDetail?id=${this.$route.params.id}`,
+        {}).then(this.handleGetDataSucc);
     },
-    handleGetDataSucc (res,id) {
-      res = res.data
-      if(res.ret && res.data) {
+    handleGetDataSucc(res) {
+      if (res.data) {
         const data = res.data;
         this.sightName = data.sightName;
         this.bannerImg = data.bannerImg;
@@ -65,16 +65,16 @@ export default {
         this.strategyNum = data.strategyNum;
         this.position = data.position;
       }
-    }
+    },
   },
-  mounted () {
-     this.getDetailInfo() 
-  }
-}
+  mounted() {
+    this.getDetailInfo();
+  },
+};
 </script>
 
 <style lang="stylus" scoped>
   .content
-    height: 35rem
-    background: #eeeeee
+    height: 35rem;
+    background: #eeeeee;
 </style>

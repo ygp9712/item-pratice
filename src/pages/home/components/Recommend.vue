@@ -2,22 +2,22 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <router-link 
-      class="item border-bottom" 
+      <router-link
+      class="item border-bottom"
       tag= "li"
-      v-for="item of list" 
+      v-for="item of list"
       :key="item.id"
       :to="{ name: 'Detail',params: { id: item.id }  }" >
         <!-- <div class="item-img-wrap">
            图片的包裹，用来撑开图片，防止抖动
            </div>  -->
-        <img class="item-img" 
+        <img class="item-img"
           :src="item.imgUrl"
           />
-        <div 
+        <div
         class="img-tag"
-        :class="{ tagA: item.tag == '可订明日', tagB: item.tag == '随买随用' }" 
-        v-if= "item.tag" 
+        :class="{ tagA: item.tag == '可订明日', tagB: item.tag == '随买随用' }"
+        v-if= "item.tag"
         >{{item.tag}}</div>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -39,11 +39,11 @@
 
 <script>
 export default {
-  name:'HomeRecommend',
+  name: 'HomeRecommend',
   props: {
-    list: Array
-  }
-}
+    list: Array,
+  },
+};
 </script>
 
 <style lang="stylus" scoped>

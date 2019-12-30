@@ -8,7 +8,7 @@
           <img class="gallery-img" :src=item />
         </swiper-slide>
         <!-- Optional controls -->
-         <div class="swiper-pagination"  slot="pagination"></div> 
+         <div class="swiper-pagination"  slot="pagination"></div>
         <!--  这里是轮播图分页的点 -->
         <!-- 分页点和轮播图属于不同的区域，scoped会使他们的样式不能互通 -->
       </swiper>
@@ -22,12 +22,12 @@ export default {
   props: {
     imgs: {
       type: Array,
-      default () {
-        return []
-      }
-    }
+      default() {
+        return [];
+      },
+    },
   },
-  data () {
+  data() {
     return {
       swiperOptions: {
         pagination: '.swiper-pagination',
@@ -37,16 +37,16 @@ export default {
         observer: true,
         /* 启动动态检查器(OB/观众/观看者)，当改变swiper的样式（例如隐藏/显示）或者修改swiper的子元素时，自动初始化swiper。 */
         /* 大致作用：监听自己和父级组件的dom变化，一旦改变就会实时更新 */
-      }
-    }
+      },
+    };
   },
   methods: {
-    handleGalleryClick () {
+    handleGalleryClick() {
       this.$emit('close');
       /* 向调用自己的父组件Banner发射事件 */
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="stylus" scoped>
@@ -78,5 +78,4 @@ export default {
         color: #fff
       .gallery-img
         width: 100%
-  
 </style>

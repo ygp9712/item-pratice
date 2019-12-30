@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" 
+      <img class="banner-img"
       :src="bannerImg"/>
       <div class="banner-info">
         <div class="banner-title">{{this.sightName}}
@@ -12,8 +12,8 @@
       </div>
     </div>
     <fade-animation>
-      <common-gallery 
-      :imgs="galleryImgs" 
+      <common-gallery
+      :imgs="galleryImgs"
       v-show="showGallery"
       @close="handleGalleryClose"
       >
@@ -21,38 +21,37 @@
       </common-gallery>
     </fade-animation>
   </div>
-   
 </template>
 
 <script>
-import CommonGallery from 'common/gallery/gallery';
+import CommonGallery from 'common/gallery/Gallery';
 import FadeAnimation from 'common/fade/FadeAnimation';
+
 export default {
   name: 'DetailBanner',
   props: {
     sightName: String,
     bannerImg: String,
-    galleryImgs: Array
+    galleryImgs: Array,
   },
   components: {
-    CommonGallery: CommonGallery,
-    FadeAnimation: FadeAnimation
+    CommonGallery,
+    FadeAnimation,
   },
-  data () {
+  data() {
     return {
-      showGallery : false,
-      
-    }
+      showGallery: false,
+    };
   },
   methods: {
-    handleBannerClick () {
+    handleBannerClick() {
       this.showGallery = true;
     },
-    handleGalleryClose () {
+    handleGalleryClose() {
       this.showGallery = false;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="stylus" scoped>
@@ -66,7 +65,7 @@ export default {
        width:100%
      .banner-info
        display: flex
-       position: absolute 
+       position: absolute
        left: 0
        right: 0
        bottom: 0

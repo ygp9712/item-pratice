@@ -11,47 +11,46 @@
 <script>
 export default {
   name: 'DetailTab',
-  data () {
+  data() {
     return {
-      classVal: ""
-    }
+      classVal: '',
+    };
   },
   computed: {
-    boxDom () {
+    boxDom() {
       return this.$refs.box;
     },
-    slideDom () {
+    slideDom() {
       return this.$refs.slide;
-    }
+    },
   },
   methods: {
-    handleScroll () {
+    handleScroll() {
       const top = document.documentElement.scrollTop;
-      if (top < 220)
-      {
-         this.classVal = "box"
-         this.boxDom.setAttribute("class",this.classVal); 
+      if (top < 220) {
+        this.classVal = 'box';
+        this.boxDom.setAttribute('class', this.classVal);
       } else {
-         this.classVal = "box beFixed"
-         this.boxDom.setAttribute("class",this.classVal); 
+        this.classVal = 'box beFixed';
+        this.boxDom.setAttribute('class', this.classVal);
       }
     },
-    handleClickLeft () {
-      this.slideDom.style.left = 59 +'px';
-      window.scrollTo(0,220.1);
+    handleClickLeft() {
+      this.slideDom.style.left = `${59}px`;
+      window.scrollTo(0, 220.1);
     },
-    handleClickRight () {
-      this.slideDom.style.left = 247 +'px';
-      window.scrollTo(0,600);
-    }
+    handleClickRight() {
+      this.slideDom.style.left = `${247}px`;
+      window.scrollTo(0, 600);
+    },
   },
-  mounted () {
-    window.addEventListener('scroll',this.handleScroll);
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
   },
-  unmounted () {
-    window.removeEventListener('scroll',this.handleScroll);
-  }
-}
+  unmounted() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+};
 </script>
 
 <style lang="stylus" scoped>

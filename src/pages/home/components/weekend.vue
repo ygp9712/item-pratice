@@ -4,27 +4,26 @@
     <ul>
       <li class="item" v-for="item of list" :key="item.id">
         <div class="item-img-wrap">
-          <img class="item-img" 
+          <img class="item-img"
           :src="item.imgUrl"
           />
-        </div>  
+        </div>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-text">{{item.text}}</p>
         </div>
       </li>
-      
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name:'HomeWeekend',
+  name: 'HomeWeekend',
   props: {
-    list: Array
+    list: Array,
   },
-}
+};
 </script>
 
 <style lang="stylus" scoped>
