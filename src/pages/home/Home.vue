@@ -51,8 +51,8 @@ export default {
       axios.get(`/api/getIndex?city=${this.city}`)
         .then(this.getHomeInfoSucc);
     },
-    getHomeInfoSucc(res) {
-      res = res.data;
+    getHomeInfoSucc(e) {
+      const res = e.data;
       if (res.ret && res.data) {
       /* 判断意思是成功接收到json并且有数据（json里面存有成功码ret） */
         const data = res.data;
@@ -63,8 +63,8 @@ export default {
       }
     },
   },
-  mounted() {
-    /* 页面一旦挂载就调用函数 */
+  created() {
+    /* 页面一旦创建就调用函数 */
     this.lastCity = this.city;
     this.getHomeInfo();
     /* 问题：一旦页面通过路由跳转回来就会重新渲染页面，

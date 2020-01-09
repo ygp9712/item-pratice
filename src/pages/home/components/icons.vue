@@ -4,8 +4,8 @@
     <swiper-slide v-for="(page,index) of pages" :key="index">
   <div class="icon"
        v-for="item of page"
-       :key="item.id"
-  >
+       :key="item.id">
+    <router-link :to="name='list'">
     <div class="icon-img">
     <img
     class="icon-img-content"
@@ -13,6 +13,7 @@
     />
     </div>
     <p class="icon-text">{{item.text}}</p>
+    </router-link>
   </div>
   </swiper-slide>
   </swiper>
@@ -33,13 +34,14 @@ export default{
       },
     };
   },
+  methods: {
+  },
   computed: {
     pages() {
       const pages = [];
       this.list.forEach((item, index) => {
         /* forEach对每个数据项都进行操作 */
         const page = Math.floor(index / 8);
-        /* 大于8的存放到第2页去 */
         if (!pages[page]) {
           pages[page] = [];
         }

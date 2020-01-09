@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from '@/pages/home/Home';
 import City from '@/pages/city/City';
 import Detail from '@/pages/detail/Detail';
+import List from '@/pages/list/List';
 
 /* import HelloWorld from '@/components/HelloWorld'; */
 /* @符号指的是src这个目录 */
@@ -17,6 +18,11 @@ export default new Router({
       name: 'Home',
       component: Home,
       /* 显示名为HelloWorld的HelloWorld组件 */
+    },
+    {
+      path: '/list',
+      name: 'List',
+      component: List,
     },
     {
       path: '/city',

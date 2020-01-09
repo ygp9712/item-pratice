@@ -44,8 +44,8 @@ export default {
       axios.get('/api/getCity')
         .then(this.handleGetCityInfoSucc);
     },
-    handleGetCityInfoSucc(res) {
-      res = res.data;
+    handleGetCityInfoSucc(e) {
+      const res = e.data;
       if (res.ret && res.data) {
         const data = res.data;
         this.cities = data.cities;
@@ -56,7 +56,7 @@ export default {
       this.letter = word;
     },
   },
-  mounted() {
+  created() {
     this.getCityInfo();
   },
 };
