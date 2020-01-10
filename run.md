@@ -15,4 +15,8 @@ npm run dev
 
 #在浏览器中输入
 [本机IPv4地址]:8080
+
+#运行koa服务器
+cd server
+node index.js
 ```

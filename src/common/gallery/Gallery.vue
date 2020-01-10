@@ -65,7 +65,6 @@ export default {
     right: 0
     top: 0
     bottom: 0
-    /* 这四项将组件布满整个页面 */
     background: #000
     .wrapper
       width: 100%

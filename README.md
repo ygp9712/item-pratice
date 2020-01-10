@@ -18,7 +18,7 @@
 
 [1]使用到了**ES6**的新特性例如扩展运算符(...)、箭头函数、解构赋值、模板字符串等。vue中axios使用了**Promise**发送请求、koa2中使用了**Async函数**来异步请求、传递数据。
 
-[2]使用了shadow、transform等**CSS3**新特性。
+[2]使用了shadow、transform、transition等**CSS3**新特性。
 
 [3]使用**webpack**打包项目各种模块。通过配置loader来编译支持其他类型的模块类似postcss、stylus等。配置proxyTable代理服务器以解决开发环境的跨域问题。
 

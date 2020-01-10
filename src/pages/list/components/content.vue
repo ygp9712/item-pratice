@@ -15,27 +15,34 @@
       </div>
     </div>
     <div class="list-content">
-      <div class="list-item" v-for="(item, index) of pages[nowPage - 1]" :key="index">
-        <div class="sight-info">
-           <img class="sight-img" :src="item.imgUrl" alt="图片">
-           <div class="sight-detail">
-             <p class="sight-name">{{item.title}}</p>
-             <div class="sight-rating">
-               <span class="iconfont icon-star">&#58882;&#58882;&#58882;&#58882;&#58882;</span>
-               <span class="comment">{{item.commentNum}}评论</span>
-             </div>
-             <div class="sight-fee">￥
-               <span class="fee-num">{{item.fee}}</span>
-               <span class="fee-word">起</span>
-             </div>
-             <span class="sight-position">{{item.position}}</span>
-           </div>
+      <transition-group :name="listDirection">
+        <div class="list-item" v-for="item of pages[nowPage - 1]" :key="item.id">
+          <div class="sight-info">
+            <img class="sight-img" :src="item.imgUrl" alt="图片">
+            <div
+              class="sight-tag"
+              :class="{ tagA: item.tag == '可订明日', tagB: item.tag == '随买随用' }"
+              v-if= "item.tag"
+            >{{item.tag}}</div>
+            <div class="sight-detail">
+              <p class="sight-name">{{item.title}}</p>
+              <div class="sight-rating">
+                <span class="iconfont icon-star">&#58882;&#58882;&#58882;&#58882;&#58882;</span>
+                <span class="comment">{{item.commentNum}}评论</span>
+              </div>
+              <div class="sight-fee">￥
+                <span class="fee-num">{{item.fee}}</span>
+                <span class="fee-word">起</span>
+              </div>
+              <span class="sight-position">{{item.position}}</span>
+            </div>
+          </div>
+          <div class="sight-ticket" v-for="(tItem, _index) of item.ticket" :key="_index">
+            <span class="ticket-name">{{tItem.title}}</span>
+            <span class="ticket-fee">￥<em class="num">{{tItem.fee}}</em></span>
+          </div>
         </div>
-        <div class="sight-ticket" v-for="(tItem, _index) of item.ticket" :key="_index">
-          <span class="ticket-name">{{tItem.title}}</span>
-          <span class="ticket-fee">￥<em class="num">{{tItem.fee}}</em></span>
-        </div>
-      </div>
+      </transition-group>
     </div>
     <div class="pagination">
       <div class="page-btn disable" @click="handleBack" ref="btnLeft">上一页</div>
@@ -59,6 +66,7 @@ export default {
       showLeft: 0,
       showRight: 0,
       nowPage: 1,
+      listDirection: 'listRight',
     };
   },
   computed: {
@@ -71,7 +79,6 @@ export default {
           pages[page] = [];
         }
         pages[page].push(item);
-        /* 若为空，则插入数据 */
       });
       return pages;
     },
@@ -126,6 +133,7 @@ export default {
       this.showRight = this.showRight === 1 ? 0 : 1;
     },
     handleBack() {
+      this.listDirection = 'listLeft';
       if (this.nowPage !== 1) {
         if (this.nowPage === this.pagesNum) {
           this.btnRightDom.setAttribute('class', 'page-btn');
@@ -137,6 +145,7 @@ export default {
       }
     },
     handleNext() {
+      this.listDirection = 'listRight';
       if (this.nowPage !== this.pagesNum) {
         if (this.nowPage === 1) {
           this.btnLeftDom.setAttribute('class', 'page-btn');
@@ -158,11 +167,26 @@ export default {
 </script>
 
 <style lang="stylus">
+  .listRight-enter-to,.listRight-leave
+    transition: all 2s ease;
+    transform: translateX(0);
+  .listRight-leave-active,.listRight-enter
+    opacity: 0;
+    transform: translateX(100%);
+
+  .listLeft-enter-to,.listLeft-leave
+    transition: all 2s ease;
+    transform: translateX(0);
+  .listLeft-leave-active,.listLeft-enter
+    opacity: 0;
+    transform: translateX(-100%);
+  //以上是transition设置
+
   .container
     font-size: 62.5%;
     background: #f2f2f2;
     .select-wrapper
-      display: block;
+      display: inline-block;
       width: 100%;
       z-index: 10;
       .selecter
@@ -200,7 +224,7 @@ export default {
           right: -20px;
           top: 50% + 6px;
       .menu-class
-        z-index: 10;
+        z-index: 50;
         position: absolute
         top: 80px;
         display: block;
@@ -229,6 +253,21 @@ export default {
           .sight-img
             width: 100px;
             height: 100px;
+          .tagA/*  */
+            background-image: url(https://img1.qunarzz.com/piao/fusion/1802/52/b9080e45b69b4f02.png)
+          .tagB
+            background-image: url(https://img1.qunarzz.com/piao/fusion/1802/20/2ba6d10b17972e02.png)
+          .sight-tag
+            background-size: 100%
+            position: absolute
+            top: 10
+            left: 10
+            width: 1.02rem
+            height: .38rem
+            text-indent: 3px
+            color: #fff
+            line-height: .38rem
+            font-size: .2rem
           .sight-detail
             display: flex;
             flex-direction: column;
